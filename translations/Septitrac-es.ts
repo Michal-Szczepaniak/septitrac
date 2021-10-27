@@ -5,39 +5,39 @@
     <name>About</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca de</translation>
     </message>
     <message>
         <source>Made by Michał Szczepaniak.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hecho por Michał Szczepaniak.</translation>
     </message>
     <message>
         <source>Licensed under GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Licenciado bajo GPLv3</translation>
     </message>
     <message>
         <source>Links</source>
-        <translation type="unfinished"></translation>
+        <translation>Enlaces</translation>
     </message>
     <message>
         <source>Thanks to</source>
-        <translation type="unfinished"></translation>
+        <translation>Gracias a</translation>
     </message>
     <message>
         <source>Fernando Lanero for being awesome testers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fernando Lanero por las pruebas preliminares.</translation>
     </message>
     <message>
         <source>Greg Goncharov (@gregguh at telegram) for icons.</source>
-        <translation type="unfinished"></translation>
+        <translation>Greg Goncharov (@gregguh en telegram) por el diseño de iconos.</translation>
     </message>
     <message>
         <source>Fernando Lanero for spanish translation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fernando Lanero por la traducción al español.</translation>
     </message>
     <message>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Donaciones</translation>
     </message>
 </context>
 <context>
@@ -103,7 +103,7 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca de</translation>
     </message>
 </context>
 <context>

@@ -233,6 +233,7 @@ QNetworkReply* ApiClient::getRequest(QUrl url)
 {
     QNetworkRequest request(url);
     request.setRawHeader("Authorization", getBasicAuthHeader());
+    request.setRawHeader("Accept", "application/json");
     return _manager.get(request);
 }
 
@@ -240,6 +241,7 @@ QNetworkReply *ApiClient::postRequest(QUrl url, QString data)
 {
     QNetworkRequest request(url);
     request.setRawHeader("Authorization", getBasicAuthHeader());
+    request.setRawHeader("Accept", "application/json");
     return _manager.post(request, data.toLocal8Bit());
 }
 
