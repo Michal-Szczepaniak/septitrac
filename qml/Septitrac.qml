@@ -36,7 +36,6 @@ ApplicationWindow {
 
     AboutSettings {
         id: aboutSettings
-        onStorageChanged: if (apiClient.simpleCrypt === null) apiClient.simpleCrypt = simpleCrypt
     }
 
     SimpleCrypt {
@@ -47,6 +46,7 @@ ApplicationWindow {
                 this[index] = part.charCodeAt(0);
             }, arr);
             simpleCrypt.setKey(parseInt(arr.join('')))
+            if (apiClient.simpleCrypt === null) apiClient.simpleCrypt = simpleCrypt
         }
     }
 

@@ -169,10 +169,6 @@
         <translation>Tipo</translation>
     </message>
     <message>
-        <source>Rotue</source>
-        <translation>Ruta</translation>
-    </message>
-    <message>
         <source>Trips</source>
         <translation>Viajes</translation>
     </message>
@@ -227,6 +223,10 @@
     <message>
         <source>Engine hours:</source>
         <translation>Horas de motor:</translation>
+    </message>
+    <message>
+        <source>Route</source>
+        <translation>Ruta</translation>
     </message>
 </context>
 <context>

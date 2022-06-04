@@ -397,7 +397,7 @@ Page {
                     id: typeSelector
                     label: qsTr("Type")
                     menu: ContextMenu {
-                        MenuItem { text: qsTr("Rotue") }
+                        MenuItem { text: qsTr("Route") }
                         MenuItem { text: qsTr("Trips") }
                         MenuItem { text: qsTr("Stops") }
                         MenuItem { text: qsTr("Summary") }

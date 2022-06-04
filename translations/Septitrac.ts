@@ -169,10 +169,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotue</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Trips</source>
         <translation type="unfinished"></translation>
     </message>
@@ -226,6 +222,10 @@
     </message>
     <message>
         <source>Engine hours:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Route</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

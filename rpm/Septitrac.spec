@@ -1,6 +1,6 @@
 Name:       Septitrac
 Summary:    Septitrac
-Version:    1.0
+Version:    1.0.1
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
@@ -23,7 +23,7 @@ Traccar client.
 %setup -q -n %{name}-%{version}
 
 %build
-CXXFLAGS="${CXXFLAGS} -O0"
+CXXFLAGS="${CXXFLAGS} -O3"
 export CXXFLAGS
 %qmake5
 
