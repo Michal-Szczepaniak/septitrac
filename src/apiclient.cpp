@@ -24,6 +24,10 @@ along with Septitrac. If not, see <http://www.gnu.org/licenses/>.
 #include <QNetworkReply>
 #include <QUrlQuery>
 #include <QStringBuilder>
+#include <QtXml>
+#include <QGraphicsObject>
+#include <QPainter>
+#include <QStyleOptionGraphicsItem>
 
 ApiClient::ApiClient(QObject *parent) : QObject(parent), _simpleCrypt(nullptr)
 {
@@ -227,6 +231,57 @@ void ApiClient::fetchSummary(QList<int> devices, QList<int> groups, int period)
     QNetworkReply* replay = getRequest(url);
     connect(replay, &QNetworkReply::finished, [=]() { setSummary(QString(replay->readAll())); emit replay->deleteLater(); });
     connect(replay, static_cast<void(QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), [=](QNetworkReply::NetworkError error) { qDebug() << error; });
+}
+
+void ApiClient::saveAsGpx(QString report)
+{
+    QDomDocument doc;
+    QDomElement gpx = doc.createElement("gpx");
+    gpx.setAttribute("version", "1.0");
+    doc.appendChild(gpx);
+
+    QDomElement trk = doc.createElement("trk");
+    gpx.appendChild(trk);
+
+    QDomElement name = doc.createElement("name");
+    name.appendChild(doc.createTextNode("Septitrac gpx"));
+    trk.appendChild(name);
+
+    QDomElement seg = doc.createElement("trkseg");
+    trk.appendChild(seg);
+
+    QJsonDocument jdoc = QJsonDocument::fromJson(report.toUtf8());
+    for (QJsonValue val : jdoc.array()) {
+        QJsonObject obj = val.toObject();
+
+        QDomElement trkpt = doc.createElement("trkpt");
+        seg.appendChild(trkpt);
+
+        trkpt.setAttribute("lat", QString::number(obj["latitude"].toDouble()));
+        trkpt.setAttribute("lon", QString::number(obj["longitude"].toDouble()));
+
+        QDomElement ele = doc.createElement("ele");
+        ele.appendChild(doc.createTextNode(QString::number(obj["altitude"].toDouble())));
+        trkpt.appendChild(ele);
+
+        QDomElement time = doc.createElement("time");
+        QString timeString = obj["deviceTime"].toString();
+        timeString = timeString.split('.').first() + "Z";
+        time.appendChild(doc.createTextNode(timeString));
+        trkpt.appendChild(time);
+    }
+
+    QFile file(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/septitrac-" + QDateTime::currentDateTime().toString("yyyy-MM-dd_HH-mm-ss") + ".gpx");
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream stream(&file);
+        stream << doc.toString();
+        file.close();
+    }
+}
+
+QString ApiClient::getSaveImagePath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/septitrac-" + QDateTime::currentDateTime().toString("yyyy-MM-dd_HH-mm-ss") + ".png";
 }
 
 QNetworkReply* ApiClient::getRequest(QUrl url)

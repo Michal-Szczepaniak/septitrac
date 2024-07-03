@@ -1,5 +1,7 @@
 TARGET = Septitrac
 
+QT += xml widgets
+
 CONFIG += sailfishapp location
 
 SOURCES += src/Septitrac.cpp \

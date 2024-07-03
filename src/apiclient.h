@@ -25,6 +25,7 @@ along with Septitrac. If not, see <http://www.gnu.org/licenses/>.
 #include <QUrl>
 #include <QTimer>
 #include <QNetworkAccessManager>
+#include <QQuickItem>
 #include "simplecrypt.h"
 
 class ApiClient : public QObject
@@ -74,6 +75,8 @@ public:
     Q_INVOKABLE void fetchTrips(QList<int> devices, QList<int> groups, int period);
     Q_INVOKABLE void fetchStops(QList<int> devices, QList<int> groups, int period);
     Q_INVOKABLE void fetchSummary(QList<int> devices, QList<int> groups, int period);
+    Q_INVOKABLE void saveAsGpx(QString report);
+    Q_INVOKABLE QString getSaveImagePath();
 
 signals:
     void loginChanged();

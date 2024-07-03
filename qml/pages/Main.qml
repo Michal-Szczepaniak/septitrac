@@ -212,11 +212,12 @@ Page {
                 var parsedPositions = JSON.parse(apiClient.positions)
                 var points = [];
                 var pointNames = [];
+                deviceSelection.items.clear()
+
                 for (var i = 0, position = parsedPositions[i]; i < parsedPositions.length; i++, position = parsedPositions[i]) {
                     var name = tryDeviceName(position.deviceId);
                     points.push(QtPositioning.coordinate(position.latitude, position.longitude));
                     pointNames.push(name);
-                    deviceSelection.items.clear()
                     deviceSelection.items.append({name: name, deviceId: position.deviceId, position: position})
                 }
 

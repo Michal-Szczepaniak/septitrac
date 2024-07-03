@@ -51,7 +51,7 @@ Page {
             }
 
             Label {
-                text: "Septitrac 1.0.1"
+                text: "Septitrac 1.2.1"
                 font.pixelSize: Theme.fontSizeExtraLarge
                 anchors.horizontalCenter: parent.horizontalCenter
                 wrapMode: Text.WordWrap

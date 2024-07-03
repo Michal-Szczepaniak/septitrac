@@ -113,6 +113,10 @@
         <translation>Configurar</translation>
     </message>
     <message>
+        <source>Save route as gpx</source>
+        <translation>Guardar ruta como gpx</translation>
+    </message>
+    <message>
         <source>Reports</source>
         <translation>Informes</translation>
     </message>
@@ -126,7 +130,7 @@
     </message>
     <message>
         <source>Max speed:</source>
-        <translation>Velocidad máxima:</translation>
+        <translation>Velocidad máx.:</translation>
     </message>
     <message>
         <source>Average Speed:</source>
@@ -138,7 +142,7 @@
     </message>
     <message>
         <source>Spent fuel:</source>
-        <translation>Combustible utilizado:</translation>
+        <translation>Consumo:</translation>
     </message>
     <message>
         <source>Duration:</source>
@@ -157,6 +161,10 @@
         <translation>Conductor:</translation>
     </message>
     <message>
+        <source>Engine hours:</source>
+        <translation>Horas de motor:</translation>
+    </message>
+    <message>
         <source>%1 km/h</source>
         <translation>%1 km/h</translation>
     </message>
@@ -165,8 +173,16 @@
         <translation>%1 km</translation>
     </message>
     <message>
+        <source>%1l</source>
+        <translation>%1l</translation>
+    </message>
+    <message>
         <source>Type</source>
         <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>Route</source>
+        <translation>Ruta</translation>
     </message>
     <message>
         <source>Trips</source>
@@ -190,7 +206,7 @@
     </message>
     <message>
         <source>Period</source>
-        <translation>Período</translation>
+        <translation>Periodo</translation>
     </message>
     <message>
         <source>Today</source>
@@ -202,31 +218,23 @@
     </message>
     <message>
         <source>This Week</source>
-        <translation>Semana actual</translation>
+        <translation>Esta semana</translation>
     </message>
     <message>
         <source>Previous Week</source>
-        <translation>Semana anterior</translation>
+        <translation>La semana pasada</translation>
     </message>
     <message>
         <source>This Month</source>
-        <translation>Mes actual</translation>
+        <translation>Este mes</translation>
     </message>
     <message>
         <source>Previous Month</source>
-        <translation>Mes anterior</translation>
+        <translation>El mes pasado</translation>
     </message>
     <message>
-        <source>%1l</source>
-        <translation>%1l</translation>
-    </message>
-    <message>
-        <source>Engine hours:</source>
-        <translation>Horas de motor:</translation>
-    </message>
-    <message>
-        <source>Route</source>
-        <translation>Ruta</translation>
+        <source>Save route as image</source>
+        <translation>Guardar ruta como imagen</translation>
     </message>
 </context>
 <context>

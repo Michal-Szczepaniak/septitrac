@@ -22,6 +22,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtPositioning 5.3
 import MapboxMap 1.0
+import Nemo.Notifications 1.0
 import "./components"
 import "../js/map_utils.js" as MapUtils
 import "../js/reports_utils.js" as ReportsUtils
@@ -50,6 +51,33 @@ Page {
                     pageStack.animatorPush(configureDialogComponent)
                 }
             }
+
+            MenuItem {
+                text: qsTr("Save route as gpx")
+                visible: map.currentRoute !== "" && map.currentRoute !== null
+                onClicked: {
+                    apiClient.saveAsGpx(map.currentRoute)
+                    saveNotification.publish()
+                }
+            }
+
+            MenuItem {
+                text: qsTr("Save route as image")
+                visible: map.currentRoute !== "" && map.currentRoute !== null
+                onClicked: {
+                    saveNotification.publish()
+                    map.grabToImage(function(result) {
+                        result.saveToFile(apiClient.getSaveImagePath());
+                    });
+                }
+            }
+        }
+
+        Notification {
+            id: saveNotification
+            appName: "Septitrac"
+            appIcon: "/usr/share/icons/hicolor/172x172/apps/Septitrac.png"
+            summary: "Saved to Documents"
         }
 
         PageHeader {
@@ -225,6 +253,7 @@ Page {
             cacheDatabaseStoreSettings: true
             cacheDatabasePath: ":memory:"
 
+            property var currentRoute: null
             property var selectedTrip
             property var selectedStop
             property var selectedSummary
@@ -333,6 +362,8 @@ Page {
                 onReportChanged: {
                     var report = JSON.parse(apiClient.report)
 
+                    map.currentRoute = apiClient.report
+
                     map.displayRoute(report)
                 }
 
@@ -364,6 +395,7 @@ Page {
             id: configureDialog
 
             onAccepted: {
+                map.currentRoute = null
                 switch (typeSelector.currentIndex) {
                 case 0:
                     apiClient.fetchRoute(deviceSelector.getSelectedDevices(), groupSelector.getSelectedGroups(), periodSelector.currentIndex)

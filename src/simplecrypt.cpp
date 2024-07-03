@@ -53,7 +53,6 @@ SimpleCrypt::SimpleCrypt(quint64 key):
 
 void SimpleCrypt::setKey(quint64 key)
 {
-    qDebug() << key;
     m_key = key;
     splitKey();
 }

@@ -113,6 +113,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Save route as gpx</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Reports</source>
         <translation type="unfinished"></translation>
     </message>
@@ -157,6 +161,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Engine hours:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>%1 km/h</source>
         <translation type="unfinished"></translation>
     </message>
@@ -165,7 +173,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>%1l</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Route</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -217,15 +233,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1l</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Engine hours:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Route</source>
+        <source>Save route as image</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
