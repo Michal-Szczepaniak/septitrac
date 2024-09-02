@@ -1,6 +1,6 @@
 Name:       Septitrac
 Summary:    Septitrac
-Version:    1.2.1
+Version:    1.2.2
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
@@ -39,7 +39,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
